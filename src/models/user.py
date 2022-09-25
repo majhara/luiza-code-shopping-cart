@@ -39,7 +39,7 @@ async def update_user(users_collection, user_id, user_data):
             {'_id': user_id},
             {'$set': data}
         )
-
+        
         if user.modified_count:
             return True, user.modified_count
 
@@ -49,9 +49,7 @@ async def update_user(users_collection, user_id, user_data):
 
 async def delete_user(users_collection, user_id):
     try:
-        user = await users_collection.delete_one(
-            {'_id': user_id}
-        )
+        user = await users_collection.delete_one({'_id': user_id})
         if user.deleted_count:
             return {'status': 'User deleted'}
     except Exception as e:
