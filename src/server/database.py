@@ -5,7 +5,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 
 class DataBase:
     client: AsyncIOMotorClient = None
-    database_uri = "DATABASE_URI"
+    database_uri = 'DATABASE_URI'
     users_collection = None
     address_collection = None
     product_collection = None

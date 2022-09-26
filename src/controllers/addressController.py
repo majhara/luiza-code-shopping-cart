@@ -37,7 +37,7 @@ async def address_crud():
         if result is None:
             address_schema = AddressSchema(user=user_searched )
             address_schema.address.append(address)
-            new_address = await insert_address(address_collection, address_schema.dict)
+            new_address = await insert_address(address_collection, address_schema.dict())
             print("Added address: ", new_address)
         else:
             is_updated = await add_new_address(address_collection, result["_id"], address)

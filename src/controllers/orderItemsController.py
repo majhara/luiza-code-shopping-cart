@@ -5,6 +5,7 @@ from src.models.user import get_user_by_email
 from src.models.product import get_product_by_code
 from src.models.order_items import insert_cart, get_cart_by_user, add_product_to_cart, update_cart, delete_cart
 
+
 async def order_item_crud():
     option = input("Entre com a opção de CRUD para carrinho: ")
     
@@ -40,8 +41,11 @@ async def order_item_crud():
         
         if product_searched == None:
             return "Produto não encontrado!"
-         
+        data = add_product_to_cart( product_searched)
     
+    order: OrderSchema
+    product: ProductSchema
+
         
         
    
